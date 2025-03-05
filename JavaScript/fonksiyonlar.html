@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function greet(){
+            console.log("Merhaba!")
+        }
+
+        greet()
+
+        function greet(name){
+            console.log("Selam " + name + "!")
+        }
+        greet("Ahmet")
+
+        function square(number){
+            return number * number;
+        }
+
+        console.log(square(5))
+
+        let sayHello = function(){
+            console.log("Merhaba, Dünya!")
+        }
+        sayHello()
+
+        let multiply = (a,b) => a*b;
+        console.log(multiply(5,9));
+
+        (function(){
+            console.log("Bu bir IIFE'dir!")
+        })();
+    </script>
+</body>
+</html>

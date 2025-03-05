@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .slider-container{
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        .slider{
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slider img{
+            width: 100%;
+            border-right: 20px solid #ddd;
+        }
+        .prev, .next{
+            position: absolute;
+            top: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+        }
+        .prev{
+            left: 10px;
+        }
+        .next{
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <img src="../wwwroot/img/1.png" alt="">
+            <img src="../wwwroot/img/2.png" alt="">
+            <img src="../wwwroot/img/3.jpg" alt="">
+        </div>
+        <button class="prev"><</button>
+        <button class="next">></button>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slider img');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+
+        let currentIndex = 0;
+        function showSlide(index){
+            if(index >= slides.length){
+                currentIndex = 0;
+            }else if(index < 0){
+                currentIndex = slides.length - 1;
+            }else{
+                currentIndex = index;
+            }
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        nextBtn.addEventListener('click',()=>{
+            showSlide(currentIndex + 1);
+        })
+        prevBtn.addEventListener('click',()=>{
+            showSlide(currentIndex - 1);
+        })
+
+        setInterval(()=>{
+            showSlide(currentIndex + 1);
+        }, 3000);
+
+    </script>
+</body>
+</html>

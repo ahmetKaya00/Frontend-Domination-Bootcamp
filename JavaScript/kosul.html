@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let age = 17;
+
+        if(age>=18){
+            console.log("You are an adult.")
+        }else{
+            console.log("You are not an adult.")
+        }
+
+        let score = 80;
+
+        if(score >= 90){
+            console.log("Grade: A")
+        }else if(score >= 80){
+            console.log("Grade: B")
+        }else if(score >= 70){
+            console.log("Grade: C")
+        }else{
+            console.log("Grade: F")
+        }
+        
+        let message = (age >=18) ? "You are an adult" : "You are not an adult";
+        console.log(message);
+
+        let day = 3;
+        let dayName;
+
+        switch(day){
+            case 1:
+                dayName = "Monday";
+                break;
+            case 2:
+                dayName = "Tuesday";
+                break;
+            case 3: 
+                dayName = "Wednesday";
+                break;
+            default:
+                dayName = "Invalid day";
+        }
+        console.log(dayName)
+    </script>
+</body>
+</html>

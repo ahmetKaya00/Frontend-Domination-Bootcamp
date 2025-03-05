@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #header{
+            color: blue;
+            font-size: 20px;
+        }
+        #newParagraph{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header">Hello, world!</h1>
+    <p>This is a paragraph</p>
+    <button id="btn">Clik Me!</button>
+
+    <script>
+        let header = document.getElementById("header");
+        let paragraph = document.querySelector('p');
+        let button = document.getElementById("btn");
+
+        console.log(header.textContent);
+        console.log(paragraph.textContent);
+        
+        header.textContent = "New Header Text";
+        paragraph.innerHTML = "<strong>This is a bol paragraph</strong>";
+
+        header.style.color = "red";
+        header.style.fontSize = "24px";
+        paragraph.style.backgroundColor = "yellow";
+
+        let body = document.body;
+        let firstChild = body.firstChild;
+        console.log(firstChild);
+
+        let newParagraph = document.createElement("p");
+        newParagraph.id = "newParagraph";
+        newParagraph.textContent = "This is a new paragraph";
+
+        document.body.appendChild(newParagraph);
+
+        document.body.removeChild(paragraph);
+
+        let link = document.createElement("a");
+        link.setAttribute("href", "https://www.techcareer.net/courses");
+        link.textContent = "Go to Techcareer";
+        document.body.appendChild(link);
+
+        let ul = document.createElement("ul");
+        for(let i = 1; i<=5;i++){
+            let li = document.createElement("li");
+            li.textContent = `Item ${i}`;
+            ul.appendChild(li);
+        }
+        document.body.appendChild(ul);
+    </script>
+</body>
+</html>

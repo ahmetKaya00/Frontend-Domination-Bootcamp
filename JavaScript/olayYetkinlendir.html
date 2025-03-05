@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="itemList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <button id="addItem">Add Item</button>
+
+    <script>
+        const itemList = document.getElementById("itemList");
+
+        itemList.addEventListener("click",function(event){
+            if(event.target.tagName === "LI"){
+                alert(event.target.textContent);
+            }
+        });
+
+        document.getElementById("addItem").addEventListener("click",function(){
+            let newItem = document.createElement("li");
+            newItem.textContent = `Item ${itemList.children.length + 1}`;
+            itemList.appendChild(newItem);
+        });
+    </script>
+</body>
+</html>
